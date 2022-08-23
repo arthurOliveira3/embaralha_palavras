@@ -27,6 +27,7 @@ for item in range(5):
     
     if tentativa == palavra:
         print("PARABÉNS VOCÊ GANHOU!!!")
+        print(f"Você utilizou {item + 1} tentativas")
         break
     elif len(tentativa) > len(embaralhada):
         print("A sua tentativa tem mais letras do que o permitido")

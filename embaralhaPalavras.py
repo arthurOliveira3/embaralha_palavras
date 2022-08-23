@@ -22,10 +22,11 @@ for item in range(5):
     print(f"\nA palavra é: {embaralhada}")
 
     tentativa = input("\nDigite a palavra que você acha certa: ")
+    tentativa = tentativa.strip()
     tentativa = tentativa.lower()
     
     if tentativa == palavra:
-        print("PARABÉNS!!!")
+        print("PARABÉNS VOCÊ GANHOU!!!")
         break
     elif len(tentativa) > len(embaralhada):
         print("A sua tentativa tem mais letras do que o permitido")

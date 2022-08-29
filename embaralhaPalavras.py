@@ -1,5 +1,13 @@
 import random
 
+def palavras(tipo):
+    cidades = ["araraquara", "aluminio", "sao paulo", "rio de janeiro", "natal", "fortaleza", "pindamonhagaba", "araquari", "joinville", "florianopolis"]
+    cores = ["azul", "amarelo", "vermelho", "verde", "laranja", "preto", "cinza", "ciano", "magenta", "rosa", 'vinho', 'bege', 'marrom', 'salmao']
+    times = ['palmeiras', 'corinthians', 'flamengo', 'fluminense', 'vasco', 'botafogo', 'portuguesa', 'guarani', 'ponte preta', 'sao paulo', 'santos', 'bragantino', 'fortaleza', 'ceara', 'atletico goianiense', 'goias', 'bahia', 'vitoria']
+    países = ['brasil', 'alemanha', 'chile', 'noruega', 'suiça', 'estados unidos', 'mexico', 'colombia', 'argentina', 'uruguai', 'equador', 'bolivia', 'peru']
+    objetos = ['caneta', 'tesoura', 'microfone', 'cadeira', 'teclado', 'projeto', 'quadro', 'ar condicionado', 'armario', 'monitor', 'tomada', 'corrente', 'fonte']
+    
+    
 def embaralhaPalavras(palavra):
     lista = list(palavra)
     random.shuffle(lista)

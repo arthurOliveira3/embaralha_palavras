@@ -1,11 +1,11 @@
 import random
 
-def escolhePalavras(tipo, dificuldade):
-    cidades = {'araraquara':'dificil', 'aluminio':'dificil', 'sao paulo':'dificil', 'rio de janeiro':'dificil', 'natal':'facil', 'fortaleza':'media', 'pindamonhagaba':'dificil', 'araquari':'media', 'joinville':'media', 'florianopolis':'dificil'}
-    cores = {'azul':'facil', 'amarelo':'media', 'vermelho':'media', 'verde':'facil', 'laranja':'media', 'preto':'facil', 'cinza':'facil', 'ciano':'media', 'magenta':'difitil', 'rosa':'facil', 'vinho':'media', 'bege':'facil', 'marrom':'dificil', 'salmao':'media'}
-    times = {'palmeiras':'facil', 'corinthians':'media', 'flamengo':'facil', 'fluminense':'media', 'vasco':'facil', 'botafogo':'media', 'portuguesa':'dificil', 'guarani':'dificil', 'ponte preta':'dificil', 'sao paulo':'dificil', 'santos':'media', 'bragantino':'media', 'fortaleza':'media', 'ceara':'facil', 'atletico goianiense':'dificil', 'goias':'facil', 'bahia':'facil', 'vitoria':'media'}
-    paises = {'brasil':'media', 'alemanha':'media', 'chile':'facil', 'noruega':'media', 'suiça':'facil', 'estados unidos':'dificil', 'mexico':'media', 'colombia':'media', 'argentina':'dificil', 'uruguai':'media', 'equador':'media', 'bolivia':'media', 'peru':'facil'}
-    objetos = {'caneta':'media', 'tesoura':'media', 'microfone':'dificil', 'cadeira':'media', 'teclado':'media', 'projetor':'media', 'quadro':'media', 'ar condicionado':'dificil', 'armario':'media', 'monitor':'media', 'tomada':'media', 'corrente':'media', 'fonte':'media'}
+def escolhePalavras(tipo):
+    cidades = ["araraquara", "aluminio", "sao paulo", "rio de janeiro", "natal", "fortaleza", "pindamonhagaba", "araquari", "joinville", "florianopolis"]
+    cores = ["azul", "amarelo", "vermelho", "verde", "laranja", "preto", "cinza", "ciano", "magenta", "rosa", 'vinho', 'bege', 'marrom', 'salmao']
+    times = ['palmeiras', 'corinthians', 'flamengo', 'fluminense', 'vasco', 'botafogo', 'portuguesa', 'guarani', 'ponte preta', 'sao paulo', 'santos', 'bragantino', 'fortaleza', 'ceara', 'atletico goianiense', 'goias', 'bahia', 'vitoria']
+    paises = ['brasil', 'alemanha', 'chile', 'noruega', 'suiça', 'estados unidos', 'mexico', 'colombia', 'argentina', 'uruguai', 'equador', 'bolivia', 'peru']
+    objetos = ['caneta', 'tesoura', 'microfone', 'cadeira', 'teclado', 'projeto', 'quadro', 'ar condicionado', 'armario', 'monitor', 'tomada', 'corrente', 'fonte']
 
     if tipo == "cidades":
         random.shuffle(cidades)
@@ -41,8 +41,7 @@ def palavras_de_animo():
 
 def jogo():
     tipoPalavra = input('Insira o tipo de palavra que você quer: Cidades, Cores, Times, Países ou Objetos\nSem acentos ou espaços:\n')
-    dificuldade = input('Insira o nível de dificuldade que você quer: Facil, Media ou Dificil\nSem acentos ou espaços:\n')
-    palavra = escolhePalavras(tipoPalavra, dificuldade)
+    palavra = escolhePalavras(tipoPalavra)
     embaralhada = embaralhaPalavras(palavra)
     palavra_animo = palavras_de_animo()
 

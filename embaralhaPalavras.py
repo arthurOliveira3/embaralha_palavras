@@ -1,27 +1,72 @@
 import random
 
-def escolhePalavras(tipo):
-    cidades = ["araraquara", "aluminio", "sao paulo", "rio de janeiro", "natal", "fortaleza", "pindamonhagaba", "araquari", "joinville", "florianopolis"]
-    cores = ["azul", "amarelo", "vermelho", "verde", "laranja", "preto", "cinza", "ciano", "magenta", "rosa", 'vinho', 'bege', 'marrom', 'salmao']
-    times = ['palmeiras', 'corinthians', 'flamengo', 'fluminense', 'vasco', 'botafogo', 'portuguesa', 'guarani', 'ponte preta', 'sao paulo', 'santos', 'bragantino', 'fortaleza', 'ceara', 'atletico goianiense', 'goias', 'bahia', 'vitoria']
-    paises = ['brasil', 'alemanha', 'chile', 'noruega', 'suiça', 'estados unidos', 'mexico', 'colombia', 'argentina', 'uruguai', 'equador', 'bolivia', 'peru']
-    objetos = ['caneta', 'tesoura', 'microfone', 'cadeira', 'teclado', 'projeto', 'quadro', 'ar condicionado', 'armario', 'monitor', 'tomada', 'corrente', 'fonte']
+def escolhePalavras(tipo, dificuldade):
+    cidades_facil = ['natal', 'belem', 'para']
+    cidades_media = ['sao paulo', 'fortaleza', 'araquari', 'joinville']
+    cidades_dificil = ['araraquara', 'rio de janeiro', 'pindamonhagaba', 'florianopolis']
+    cores_facil = ['azul', 'verde', 'preto', 'cinza', 'rosa', ]
+    cores_media = ['amarelo', 'vermelho', 'laranja', 'ciano', 'vinho', 'bege', 'marrom', 'salmao']
+    cores_dificil = ['magenta', 'purpura']
+    times_facil = ['vasco', 'santos', 'ceara', 'goias', 'bahia',' vitoria', 'sport']
+    times_media = ['palmeiras', 'flamengo', 'fluminense', 'botafogo', 'guarani', 'fortaleza']
+    times_dificil = ['corinthians', 'portuguesa', 'ponte preta', 'sao paulo', 'bragantino', 'atletico goianiense', 'athletico paranaense']
+    paises_facil = ['chile', 'brasil', 'suiça', 'peru', 'russia']
+    paises_media = ['alemanha', 'noruega', 'mexico', 'colombia', 'argentina', 'uruguai', 'equador', 'bolivia']
+    paises_dificil = ['estados unidos', 'reino unido', 'azerbaijao']
+    objetos_facil = ['caneta', 'tesoura', 'cadeira', 'quadro', 'fonte']
+    objetos_media = ['microfone', 'teclado', 'projetor', 'armario', 'monitor', 'tomada', 'corrente']
+    objetos_dificil = ['ar condicionado', 'escrivaninha', 'paralelepipedo', 'andaime']
 
     if tipo == "cidades":
-        random.shuffle(cidades)
-        return cidades[0]
-    elif tipo == 'cores':
-        random.shuffle(cores)
-        return cores[0]
-    elif tipo == 'times':
-        random.shuffle(times)
-        return times[0]
+        if dificuldade == 'facil':
+            random.shuffle(cidades_facil)
+            return cidades_facil[0]
+        elif dificuldade == 'media':
+            random.shuffle(cidades_media)
+            return cidades_media[0]
+        else:
+            random.shuffle(cidades_dificil)
+            return cidades_dificil[0]
+    elif tipo == "cores":
+        if dificuldade == 'facil':
+            random.shuffle(cores_facil)
+            return cores_facil[0]
+        elif dificuldade == 'media':
+            random.shuffle(cores_media)
+            return cores_media[0]
+        else:
+            random.shuffle(cores_dificil)
+            return cores_dificil[0]
+    elif tipo == "times":
+        if dificuldade == 'facil':
+            random.shuffle(times_facil)
+            return times_facil[0]
+        elif dificuldade == 'media':
+            random.shuffle(times_media)
+            return times_media[0]
+        else:
+            random.shuffle(times_dificil)
+            return timees_dificil[0]
     elif tipo == "paises":
-        random.shuffle(paises)
-        return paises[0]
-    elif tipo == 'objetos':
-        random.shuffle(objetos)
-        return objetos[0]
+        if dificuldade == 'facil':
+            random.shuffle(paises_facil)
+            return paises_facil[0]
+        elif dificuldade == 'media':
+            random.shuffle(paises_media)
+            return paises_media[0]
+        else:
+            random.shuffle(paises_dificil)
+            return paises_dificil[0]
+    elif tipo == "objetos":
+        if dificuldade == 'facil':
+            random.shuffle(objetos_facil)
+            return objetos_facil[0]
+        elif dificuldade == 'media':
+            random.shuffle(objetos_media)
+            return objetos_media[0]
+        else:
+            random.shuffle(objetos_dificil)
+            return objetos_dificil[0]
     else:
         return "TIPO INVÁLIDO!!!!!!!!!!!"
 
@@ -41,7 +86,8 @@ def palavras_de_animo():
 
 def jogo():
     tipoPalavra = input('Insira o tipo de palavra que você quer: Cidades, Cores, Times, Países ou Objetos\nSem acentos ou espaços:\n')
-    palavra = escolhePalavras(tipoPalavra)
+    dificuldade = input('Insira o nível de dificuldade que você quer: Fácil, Média, Difícil\nSem acentos ou espaços:\n')
+    palavra = escolhePalavras(tipoPalavra, dificuldade)
     embaralhada = embaralhaPalavras(palavra)
     palavra_animo = palavras_de_animo()
 
